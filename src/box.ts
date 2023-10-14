@@ -1,12 +1,12 @@
-export let SPEED = 2000;
+export let SPEED = 1000;
 
-export let SET_SPEED = (speed: number) => {
+export const SET_SPEED = (speed: number) => {
   SPEED = speed;
 };
 
 export const createBox = (rows: number, columns: number) => {
   const wrapper = document.querySelector(".boxer") as HTMLDivElement;
-  let boxes = new Map<number, HTMLDivElement>();
+  const boxes = new Map<number, HTMLDivElement>();
   for (let i = 0; i < rows * columns; i++) {
     const element = document.createElement("div");
     element.classList.add("box");
@@ -14,7 +14,6 @@ export const createBox = (rows: number, columns: number) => {
     wrapper.id = `box-${i}`;
     boxes.set(i, element);
   }
-  console.log(boxes);
   return boxes;
 };
 
@@ -29,5 +28,5 @@ export const appear = (boxes: Map<number, HTMLDivElement>) => {
   window.active = rand;
   setTimeout(() => {
     box?.classList.remove("appear");
-  }, 1000);
+  }, SPEED - 100);
 };

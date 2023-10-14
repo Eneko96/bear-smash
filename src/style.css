@@ -25,7 +25,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -33,7 +32,14 @@ body {
 
 h1 {
   font-size: 3.2em;
+  text-align: center;
   line-height: 1.1;
+  margin-bottom: 5rem;
+}
+
+h2,
+h3 {
+  text-align: center;
 }
 
 #app {
@@ -96,6 +102,11 @@ button:focus-visible {
   }
 }
 
+.wrapper {
+  width: fit-content;
+  margin: 0 auto;
+}
+
 .boxer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -107,7 +118,7 @@ button:focus-visible {
 .boxer > .box {
   width: 5rem;
   height: 5rem;
-  border: 1px solid #646cff;
+  border: 1px solid white;
   border-radius: 8px;
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -134,13 +145,61 @@ button:focus-visible {
   0% {
     transform: translate(0, 0);
   }
+  5% {
+    transform: translate(-0.5rem, 0);
+  }
+  10% {
+    transform: translate(0, 0);
+  }
+  15% {
+    transform: translate(0.5rem, 0);
+  }
+  20% {
+    transform: translate(0, 0);
+  }
   25% {
+    transform: translate(-0.5rem, 0);
+  }
+  30% {
+    transform: translate(0, 0);
+  }
+  35% {
+    transform: translate(0.5rem, 0);
+  }
+  40% {
+    transform: translate(0, 0);
+  }
+  45% {
     transform: translate(-0.5rem, 0);
   }
   50% {
     transform: translate(0, 0);
   }
+  55% {
+    transform: translate(0.5rem, 0);
+  }
+  60% {
+    transform: translate(0, 0);
+  }
+  65% {
+    transform: translate(-0.5rem, 0);
+  }
+  70% {
+    transform: translate(0, 0);
+  }
   75% {
+    transform: translate(0.5rem, 0);
+  }
+  80% {
+    transform: translate(0, 0);
+  }
+  85% {
+    transform: translate(-0.5rem, 0);
+  }
+  90% {
+    transform: translate(0, 0);
+  }
+  95% {
     transform: translate(0.5rem, 0);
   }
   100% {
@@ -154,4 +213,18 @@ button:focus-visible {
 
 .boxer.shake {
   animation: shake 0.3s;
+}
+
+.start {
+  width: 10rem;
+  margin-inline: auto;
+  display: block;
+}
+
+.points-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  width: fit-content;
+  margin-inline: auto;
 }
