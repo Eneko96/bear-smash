@@ -228,3 +228,13 @@ button:focus-visible {
   width: fit-content;
   margin-inline: auto;
 }
+
+.hearts-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.hearts-container > img {
+  width: 2rem;
+}
