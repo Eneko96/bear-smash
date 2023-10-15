@@ -52,7 +52,7 @@ boxes.forEach((box) => {
           updateHearts(hearts, i);
           break;
         }
-        if (i === 1) {
+        if (i === 0) {
           console.log("game over");
           isStarted = false;
           const starter = document.querySelector(".start") as HTMLButtonElement;
