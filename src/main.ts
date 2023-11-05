@@ -11,6 +11,7 @@ import {
   score,
 } from "./counter";
 let isStarted = false;
+let HITS = 0;
 
 const boxes = createBox(3, 3);
 let interval: ReturnType<typeof setInterval>;
@@ -29,6 +30,7 @@ injectHearts(hearts);
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
     if (box.classList.contains("appear")) {
+      HITS++;
       box.classList.remove("appear");
       box.classList.add("nice");
       increaseScore();
@@ -38,10 +40,8 @@ boxes.forEach((box) => {
         highScore.innerText = SCORE.toString();
       }
       clearInterval(interval);
-      SET_SPEED(SPEED - 100);
-      console.log(SPEED);
+      SET_SPEED(1000 / Math.log(2 + HITS));
       setTimeout(() => {
-        console.log("nice");
         box.classList.remove("nice");
         start();
       }, 1000);
@@ -53,7 +53,6 @@ boxes.forEach((box) => {
           break;
         }
         if (i === 0) {
-          console.log("game over");
           isStarted = false;
           const starter = document.querySelector(".start") as HTMLButtonElement;
           starter.style.display = "block";
@@ -66,9 +65,7 @@ boxes.forEach((box) => {
       wrapper.classList.add("shake");
       box.classList.add("bad");
       clearInterval(interval);
-      console.log("clear interval");
       setTimeout(() => {
-        console.log("shake");
         wrapper.classList.remove("shake");
         box.classList.remove("bad");
         start();
@@ -79,7 +76,6 @@ boxes.forEach((box) => {
 
 const start = () => {
   interval = setInterval(() => {
-    console.log("appear");
     appear(boxes);
   }, SPEED);
 };
